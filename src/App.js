@@ -9,11 +9,11 @@ import Main from "./layout/Main";
 
 import { useDispatch, useSelector } from "react-redux";
 import { fetchFoods } from "./redux/manageSlice";
-import { getStatus, getFoods } from "./redux/selector";
+import { getStatus, getAllFoods } from "./redux/selector";
 function App() {
   const [item, setItem] = useState([]);
   const dispatch = useDispatch();
-  const foods = useSelector(getFoods);
+  const foods = useSelector(getAllFoods);
   const status = useSelector(getStatus);
 
   console.log(status);

@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+}
+.upcase {
+  text-transform: uppercase !important;
+}
+
+.mb-20 {
+  margin-bottom: 20px !important;
+}
+.mb-60 {
+  margin-bottom: 60px !important;
+}
+.Banner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 30px;
+  margin-bottom: 30px;
+  .left {
+    flex: 0 0 50%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    justify-content: center;
+    .info {
+      font-size: 20px;
+      color: var(--text-color);
+      margin: 0 0 16px;
+    }
+    .sologan {
+      font-weight: 600;
+      margin-bottom: 24px;
+      max-width: 450px;
+      line-height: 1.5;
+      .custom {
+        color: var(--active);
+      }
+    }
+    .desc {
+      color: #777777;
+      letter-spacing: 0.5px;
+      max-width: 500px;
+      line-height: 1.5;
+    }
+    .row {
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      .btn {
+        flex: 0 0 30%;
+        padding: 7px 15px;
+        border-radius: 20px;
+        font-weight: 700;
+      }
+      .bnt-1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        background-color: var(--active);
+        margin-right: 30px;
+      }
+
+      .bnt-1:hover {
+        opacity: 0.9;
+      }
+      .btn-2:hover {
+        opacity: 0.9;
+        color: #777777;
+        border: 1px solid #777777;
+      }
+      .btn-2 {
+        border: 1px solid var(--active);
+        color: var(--active);
+      }
+      .service {
+        padding: 0;
+        flex: 0 0 35%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        .anticon {
+          width: 30px;
+          height: 30px;
+          background-color: var(--active);
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 10px;
+          svg {
+            color: #fff;
+            width: 20px;
+            height: 20px;
+          }
+        }
+        .desc {
+          display: inline;
+        }
+      }
+    }
+  }
+
+  .right {
+    flex: 0 0 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .image {
+      width: 550px;
+      height: 550px;
+      object-fit: contain;
+    }
+  }
+}

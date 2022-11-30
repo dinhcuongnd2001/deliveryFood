@@ -3,7 +3,8 @@
 
 :root {
   --text-color: #212245;
-  --active: #df2020;
+  /* --active: #df2020; */
+  --active: #e8608e;
   --white: #fff;
   --hover-active: #d01818;
   --bg: #fde4e4;

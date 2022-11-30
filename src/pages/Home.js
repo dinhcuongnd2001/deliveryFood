@@ -5,15 +5,18 @@ import { Link } from "react-router-dom";
 
 import { useSelector, useDispatch } from "react-redux";
 import filterSilce from "../redux/filterSlice";
-import { getFoodsBySelect } from "../redux/selector";
+import Slider from "../components/slider/Slider";
+import { getFoodsBySelect, getFoodsByCost } from "../redux/selector";
 import {
   RightOutlined,
   CarOutlined,
   PropertySafetyOutlined,
+  CheckCircleOutlined,
 } from "@ant-design/icons";
 function Home() {
   const foods = useSelector(getFoodsBySelect);
-  console.log(foods);
+  const hotPizza = useSelector(getFoodsByCost);
+  console.log("hot pizza : ", hotPizza);
   const [filter, setFilter] = useState("All");
   const dispatch = useDispatch();
   const handleClick = (value) => {
@@ -61,7 +64,7 @@ function Home() {
         <div className="right">
           <img
             className="image"
-            src={require("../asset/images/hero.png")}
+            src={require("../asset/images/bg_section_1.png")}
             alt="#error"
           />
         </div>
@@ -206,20 +209,106 @@ function Home() {
         </div>
         <div className="product">
           {foods?.map((food) => (
-            <div className="food">
+            <div className="food" key={food.id}>
               <img
                 className="image"
                 src={require(`../asset/images/${food.image01}`)}
               />
               <div className="footer">
-                <h5 className="name">{food.title}</h5>
+                <Link className="name">{food.title}</Link>
                 <div className="detail">
                   <span className="cost">${food.price}</span>
-                  <button className="btn">Add To Cart</button>
+                  <button className="btn">Add Cart</button>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      <div className="Info">
+        <img
+          className="image"
+          src={require("../asset/images/bg_section_2.png")}
+          alt="#error"
+        />
+        <div className="detail">
+          <h2 className="title">
+            Why <span className="custom">Tasty Treat?</span>
+          </h2>
+          <p className="desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum hic
+            culpa beatae commodi, officiis impedit non. Vitae veritatis
+            necessitatibus, expedita quibusdam quasi officia sint accusamus?
+            Minus, tempore. Sit, tenetur rem.
+          </p>
+          <div className="blog">
+            <div className="item">
+              <span className="name">
+                <CheckCircleOutlined className="icon" /> Fresh and tasty foods
+              </span>
+              <p className="desc f-14">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Repellat voluptas.
+              </p>
+            </div>
+
+            <div className="item">
+              <span className="name">
+                <CheckCircleOutlined className="icon" /> Fresh and tasty foods
+              </span>
+              <p className="desc f-14">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Repellat voluptas.
+              </p>
+            </div>
+
+            <div className="item">
+              <span className="name">
+                <CheckCircleOutlined className="icon" /> Order from any location
+              </span>
+              <p className="desc f-14">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Repellat voluptas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="HotPizza">
+        <h2 className="title">Hot Pizza</h2>
+        <div className="product">
+          {hotPizza?.map((food) => (
+            <div className="food" key={food.id}>
+              <img
+                className="image"
+                src={require(`../asset/images/${food.image01}`)}
+              />
+              <div className="footer">
+                <Link className="name">{food.title}</Link>
+                <div className="detail">
+                  <span className="cost">${food.price}</span>
+                  <button className="btn">Add Cart</button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="Slider">
+        <div className="info">
+          <h5 className="title mb-24">Testimonial</h5>
+          <h2 className="info mb-24">
+            What our <span className="custom">customers</span> are saying
+          </h2>
+          <p className="desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit,
+            eius ipsa aut, iusto ipsum, modi omnis debitis commodi error
+            blanditiis nam facere placeat consequatur!
+          </p>
+          <Slider />
         </div>
       </div>
     </Container>

@@ -17,7 +17,7 @@ const HeaderComponent = () => {
             <Link to="/" className="link">
               <img
                 className="image"
-                src={require("../asset/images/res-logo.png")}
+                src={require("../asset/images/logo_1.png")}
                 alt="logo"
               />
               <h5 className="name">Tasty Treat</h5>

@@ -300,7 +300,7 @@ function Home() {
       <div className="Slider">
         <div className="info">
           <h5 className="title mb-24">Testimonial</h5>
-          <h2 className="info mb-24">
+          <h2 className="heading mb-24">
             What our <span className="custom">customers</span> are saying
           </h2>
           <p className="desc">
@@ -310,6 +310,12 @@ function Home() {
           </p>
           <Slider />
         </div>
+
+        <img
+          src={require("../asset/images/network.png")}
+          alt=""
+          className="image"
+        />
       </div>
     </Container>
   );

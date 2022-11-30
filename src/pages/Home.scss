@@ -352,4 +352,27 @@
 }
 
 .Slider {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  .info {
+    max-width: 600px;
+    .title {
+      color: var(--active);
+    }
+    .heading {
+      font-weight: 600;
+      .custom {
+        color: var(--active);
+      }
+    }
+    .desc {
+      color: #777777;
+    }
+  }
+  .image {
+    width: 600px;
+    height: 600px;
+    object-fit: contain;
+  }
 }

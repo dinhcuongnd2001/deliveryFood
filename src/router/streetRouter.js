@@ -5,6 +5,8 @@ import Cart from "../pages/Cart";
 import Foods from "../pages/Foods";
 import Contact from "../pages/Contact";
 import Products from "../components/product/Products";
+import Page404 from "../components/page404/Page404";
+import ProductDetail from "../components/productDetail/ProductDetail";
 function StreetRouter() {
   return (
     <>
@@ -14,7 +16,9 @@ function StreetRouter() {
         <Route path="/foods" element={<Foods />}>
           <Route index element={<Products />} />
         </Route>
+        <Route path="/productDetail" element={<ProductDetail />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<Page404 />}></Route>
       </Routes>
     </>
   );

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "./Home.scss";
 import { Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import filterSilce from "../redux/filterSlice";
 import Slider from "../components/slider/Slider";
@@ -16,12 +15,16 @@ import {
 function Home() {
   const foods = useSelector(getFoodsBySelect);
   const hotPizza = useSelector(getFoodsByCost);
-  console.log("hot pizza : ", hotPizza);
+  // console.log("hot pizza : ", hotPizza);
+  const navigate = useNavigate();
   const [filter, setFilter] = useState("All");
   const dispatch = useDispatch();
   const handleClick = (value) => {
     dispatch(filterSilce.actions.byCategory(value));
     setFilter(value);
+  };
+  const handleShow = (food) => {
+    navigate("../productDetail", { state: { food: food } });
   };
   return (
     <Container>
@@ -75,6 +78,7 @@ function Home() {
           <img
             className="image"
             src={require("../asset/images/category-01.png")}
+            // src={require("../asset/images/1.png")}
             alt="#error"
           />
           <span className="name">Fastfood</span>
@@ -83,6 +87,7 @@ function Home() {
           <img
             className="image"
             src={require("../asset/images/category-02.png")}
+            // src={require("../asset/images/2.png")}
             alt="#error"
           />
           <span className="name">Pizza</span>
@@ -91,6 +96,7 @@ function Home() {
           <img
             className="image"
             src={require("../asset/images/category-03.png")}
+            // src={require("../asset/images/3.png")}
             alt="#error"
           />
           <span className="name">Asian Food</span>
@@ -99,6 +105,7 @@ function Home() {
           <img
             className="image"
             src={require("../asset/images/category-04.png")}
+            // src={require("../asset/images/4.png")}
             alt="#error"
           />
           <span className="name">Row Meat</span>
@@ -215,7 +222,9 @@ function Home() {
                 src={require(`../asset/images/${food.image01}`)}
               />
               <div className="footer">
-                <Link className="name">{food.title}</Link>
+                <h6 onClick={() => handleShow(food)} className="name">
+                  {food.title}
+                </h6>
                 <div className="detail">
                   <span className="cost">${food.price}</span>
                   <button className="btn">Add Cart</button>
@@ -312,7 +321,8 @@ function Home() {
         </div>
 
         <img
-          src={require("../asset/images/network.png")}
+          // src={require("../asset/images/network.png")}
+          src={require("../asset/images/session-bg-3.png")}
           alt=""
           className="image"
         />

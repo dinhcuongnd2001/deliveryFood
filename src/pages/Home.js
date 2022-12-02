@@ -4,8 +4,9 @@ import { Container } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import filterSilce from "../redux/filterSlice";
+import userSlice from "../redux/userSlice";
 import Slider from "../components/slider/Slider";
-import { getFoodsBySelect, getFoodsByCost } from "../redux/selector";
+import { getFoodsBySelect, getFoodsByCost, getCart } from "../redux/selector";
 import {
   RightOutlined,
   CarOutlined,
@@ -15,6 +16,8 @@ import {
 function Home() {
   const foods = useSelector(getFoodsBySelect);
   const hotPizza = useSelector(getFoodsByCost);
+  const userCart = useSelector(getCart);
+  console.log("userCart ", userCart);
   // console.log("hot pizza : ", hotPizza);
   const navigate = useNavigate();
   const [filter, setFilter] = useState("All");
@@ -25,6 +28,10 @@ function Home() {
   };
   const handleShow = (food) => {
     navigate("../productDetail", { state: { food: food } });
+  };
+
+  const handleAddToCard = (food) => {
+    dispatch(userSlice.actions.addQuantity(food));
   };
   return (
     <Container>
@@ -227,7 +234,9 @@ function Home() {
                 </h6>
                 <div className="detail">
                   <span className="cost">${food.price}</span>
-                  <button className="btn">Add Cart</button>
+                  <button onClick={() => handleAddToCard(food)} className="btn">
+                    Add Cart
+                  </button>
                 </div>
               </div>
             </div>

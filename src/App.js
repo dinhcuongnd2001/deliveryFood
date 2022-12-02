@@ -16,7 +16,7 @@ function App() {
   const foods = useSelector(getAllFoods);
   const status = useSelector(getStatus);
 
-  console.log(status);
+  // console.log(status);
 
   // call Foods from API
   useEffect(() => {

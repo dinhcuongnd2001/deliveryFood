@@ -3,12 +3,12 @@
 
 :root {
   --text-color: #212245;
-  /* --active: #df2020; */
-  --active: #e8608e;
+  --active: #df2020;
   --white: #fff;
-  /* --hover-active: #d01818; */
+  --hover-active: #d01818;
   --bg: #fde4e4;
-  --hover-active: #43464b;
+  /* --active: #e8608e; */
+  /* --hover-active: #43464b; */
   /* --active: #43464b; */
   /* --bg: #e8608e; */
 }

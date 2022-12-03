@@ -8,6 +8,7 @@ export const getHotPizza = (state) => state.filter.hotPizza;
 export const getNameFood = (state) => state.filter.name;
 export const getTypeCostFood = (state) => state.filter.typeCost;
 export const getCart = (state) => state.user.cart;
+export const getQuantity = (state) => state.user.quantity;
 
 export const getFoodsBySelect = createSelector(
   getAllFoods,

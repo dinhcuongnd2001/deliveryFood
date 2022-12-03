@@ -4,14 +4,11 @@ import Container from "react-bootstrap/Container";
 import { SearchOutlined } from "@ant-design/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import {
-  getFoodsByMulSelection,
-  getAllFoods,
-  getCategory,
-} from "../../redux/selector";
-import "./product.scss";
+import { getFoodsByMulSelection } from "../../redux/selector";
 import filterSilce from "../../redux/filterSlice";
 import Page404 from "../page404/Page404";
+import ProductComponent from "../productComponent/ProductComponent";
+import "./product.scss";
 
 function Products() {
   const [search, setSearch] = useState("");
@@ -19,12 +16,6 @@ function Products() {
   const [typeCost, setTypeCost] = useState("Default");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  // const allFoods = useSelector(getAllFoods);
-  // const categoryFood = useSelector(getCategory);
-  // console.log(categoryFood);
-  // console.log("allFood : ", allFoods);
-  // console.log("allfoodName: ", allFoodsName);
   const allFoodsName = useSelector(getFoodsByMulSelection);
   useEffect(() => {
     dispatch(filterSilce.actions.byCategory("All"));
@@ -45,9 +36,6 @@ function Products() {
     setTypeCost(e.target.value);
   };
 
-  const handleClick = (food) => {
-    navigate("../productDetail", { state: { food: food } });
-  };
   return (
     <div>
       <SessionFood title="All Foods" />
@@ -95,21 +83,7 @@ function Products() {
           <div className="product">
             {allFoodsName.length > 0 ? (
               allFoodsName.map((food) => (
-                <div className="food" key={food.id}>
-                  <img
-                    className="image"
-                    src={require(`../../asset/images/${food.image01}`)}
-                  />
-                  <div className="footer">
-                    <h6 onClick={() => handleClick(food)} className="name">
-                      {food.title}
-                    </h6>
-                    <div className="detail">
-                      <span className="cost">${food.price}</span>
-                      <button className="btn">Add Cart</button>
-                    </div>
-                  </div>
-                </div>
+                <ProductComponent food={food} key={food.id} />
               ))
             ) : (
               <Page404 />

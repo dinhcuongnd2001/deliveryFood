@@ -13,11 +13,12 @@ import {
   PropertySafetyOutlined,
   CheckCircleOutlined,
 } from "@ant-design/icons";
+import ProductComponent from "../components/productComponent/ProductComponent";
 function Home() {
   const foods = useSelector(getFoodsBySelect);
   const hotPizza = useSelector(getFoodsByCost);
   const userCart = useSelector(getCart);
-  console.log("userCart ", userCart);
+  // console.log("userCart ", userCart);
   // console.log("hot pizza : ", hotPizza);
   const navigate = useNavigate();
   const [filter, setFilter] = useState("All");
@@ -25,13 +26,6 @@ function Home() {
   const handleClick = (value) => {
     dispatch(filterSilce.actions.byCategory(value));
     setFilter(value);
-  };
-  const handleShow = (food) => {
-    navigate("../productDetail", { state: { food: food } });
-  };
-
-  const handleAddToCard = (food) => {
-    dispatch(userSlice.actions.addQuantity(food));
   };
   return (
     <Container>
@@ -223,23 +217,7 @@ function Home() {
         </div>
         <div className="product">
           {foods?.map((food) => (
-            <div className="food" key={food.id}>
-              <img
-                className="image"
-                src={require(`../asset/images/${food.image01}`)}
-              />
-              <div className="footer">
-                <h6 onClick={() => handleShow(food)} className="name">
-                  {food.title}
-                </h6>
-                <div className="detail">
-                  <span className="cost">${food.price}</span>
-                  <button onClick={() => handleAddToCard(food)} className="btn">
-                    Add Cart
-                  </button>
-                </div>
-              </div>
-            </div>
+            <ProductComponent food={food} key={food.id} />
           ))}
         </div>
       </div>
@@ -298,19 +276,7 @@ function Home() {
         <h2 className="title">Hot Pizza</h2>
         <div className="product">
           {hotPizza?.map((food) => (
-            <div className="food" key={food.id}>
-              <img
-                className="image"
-                src={require(`../asset/images/${food.image01}`)}
-              />
-              <div className="footer">
-                <Link className="name">{food.title}</Link>
-                <div className="detail">
-                  <span className="cost">${food.price}</span>
-                  <button className="btn">Add Cart</button>
-                </div>
-              </div>
-            </div>
+            <ProductComponent food={food} key={food.id} />
           ))}
         </div>
       </div>

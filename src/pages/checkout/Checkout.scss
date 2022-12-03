@@ -1,0 +1,34 @@
+.checkout {
+  padding: 60px 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  .checkout-form {
+    .title {
+      color: var(--text-color);
+      text-align: left;
+      margin-bottom: 30px;
+    }
+    .form {
+      .input {
+        border-bottom: 1px solid #777;
+        padding: 10px 20px;
+        width: 100%;
+        margin-bottom: 10px;
+        background-color: #fff;
+        outline: none;
+      }
+      .warning {
+        color: var(--active);
+        margin-left: 20px;
+      }
+      .submit {
+        margin-top: 20px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        background-color: var(--active);
+        color: #fff;
+      }
+    }
+  }
+}

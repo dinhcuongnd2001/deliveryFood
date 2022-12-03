@@ -4,19 +4,27 @@ import Container from "react-bootstrap/Container";
 import { SearchOutlined } from "@ant-design/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { getFoodsByMulSelection } from "../../redux/selector";
+import {
+  getFoodsByMulSelection,
+  getCategory,
+  getTypeCostFood,
+  getNameFood,
+} from "../../redux/selector";
 import filterSilce from "../../redux/filterSlice";
 import Page404 from "../page404/Page404";
 import ProductComponent from "../productComponent/ProductComponent";
 import "./product.scss";
 
 function Products() {
-  const [search, setSearch] = useState("");
-  const [category, setCategory] = useState("All");
-  const [typeCost, setTypeCost] = useState("Default");
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const allFoodsName = useSelector(getFoodsByMulSelection);
+  const CurrCatrgory = useSelector(getCategory);
+  const CurrtypeCost = useSelector(getTypeCostFood);
+  const currSearch = useSelector(getNameFood);
+  const [category, setCategory] = useState(CurrCatrgory);
+  const [typeCost, setTypeCost] = useState(CurrtypeCost);
+  const [search, setSearch] = useState(currSearch);
   useEffect(() => {
     dispatch(filterSilce.actions.byCategory("All"));
   }, []);

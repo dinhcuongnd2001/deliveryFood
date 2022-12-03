@@ -11,7 +11,6 @@ const userSlice = createSlice({
   reducers: {
     addQuantity: (state, action) => {
       state.quantity += 1;
-      console.log(typeof action);
       const index = state.cart.findIndex((e) => e.id === action.payload.id);
       if (index < 0) {
         let newProduct = action.payload;
@@ -22,6 +21,16 @@ const userSlice = createSlice({
     },
     subQuantity: (state, action) => {
       state.quantity -= 1;
+    },
+    removeProduct: (state, action) => {
+      const newCart = state.cart.filter((item) => item.id != action.payload.id);
+      // console.log("new your cart: ", newState);
+      state.cart = newCart;
+      state.quantity -= action.payload.count;
+    },
+    checkout: (state) => {
+      state.cart = [];
+      state.quantity = 0;
     },
   },
 });

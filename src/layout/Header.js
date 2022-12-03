@@ -16,8 +16,8 @@ const HeaderComponent = () => {
   const showMenu = useRef();
   window.onscroll = () => {
     window.scrollY > 50
-      ? showMenu.current.classList.add("show_menu")
-      : showMenu.current.classList.remove("show_menu");
+      ? showMenu?.current.classList.add("show_menu")
+      : showMenu?.current.classList.remove("show_menu");
     return () => window.screenY(null);
   };
   return (

@@ -1,11 +1,6 @@
 import "./App.css";
-import { useRef, useState, useEffect } from "react";
-import { Img, useImage } from "react-image";
-import axios from "axios";
-import currentPath from "./asset/currenPath";
-import { Link } from "react-router-dom";
-import HeaderComponent from "./layout/Header";
-import Main from "./layout/Main";
+import { useState, useEffect } from "react";
+import Main from "./layout/main/Main";
 
 import { useDispatch, useSelector } from "react-redux";
 import { fetchFoods } from "./redux/manageSlice";
@@ -15,10 +10,6 @@ function App() {
   const dispatch = useDispatch();
   const foods = useSelector(getAllFoods);
   const status = useSelector(getStatus);
-
-  // console.log(status);
-
-  // call Foods from API
   useEffect(() => {
     dispatch(fetchFoods());
   }, []);

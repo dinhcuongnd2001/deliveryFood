@@ -4,10 +4,18 @@ import SessionFood from "../../components/sessionFood/SessionFood";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { Container } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import userSlice from "../../redux/userSlice";
+import { getCart } from "../../redux/selector";
 function Checkout() {
   const dispatch = useDispatch();
+  // const [shiping, setShipping] = useState(0);
+  const shipping = 5;
+  const currCart = useSelector(getCart);
+  const subtotal = currCart.reduce(
+    (res, curr) => (res += curr.count * curr.price),
+    0
+  );
 
   const [form, setForm] = useState({
     name: "",
@@ -147,7 +155,20 @@ function Checkout() {
               )}
             </Formik>
           </div>
-          <div className="detail"></div>
+          <div className="detail">
+            <h4 className="subtotal">
+              <span className="sub-title">Subtotal :</span>{" "}
+              <span className="custom">${subtotal}</span>
+            </h4>
+            <h4 className="shipping">
+              <span className="sub-title">Shipping :</span>{" "}
+              <span className="custom">${shipping}</span>
+            </h4>
+            <h3 className="total">
+              <span className="sub-title">Total :</span>{" "}
+              <span className="custom">${subtotal + shipping}</span>
+            </h3>
+          </div>
         </div>
       </Container>
     </>

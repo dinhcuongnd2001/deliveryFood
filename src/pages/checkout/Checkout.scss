@@ -31,4 +31,28 @@
       }
     }
   }
+  .detail {
+    margin: auto;
+    background-color: var(--bg);
+    width: 300px;
+    height: 200px;
+    padding: 20px;
+    display: grid;
+    border-radius: 15px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .custom {
+    font-size: 1.8rem;
+    color: var(--active);
+  }
+  .subtotal,
+  .shipping,
+  .total {
+    display: flex;
+    justify-content: space-between;
+  }
+  .shipping {
+    height: 60px;
+    border-bottom: 1px solid #777;
+  }
 }

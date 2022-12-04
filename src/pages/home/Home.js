@@ -3,23 +3,24 @@ import "./Home.scss";
 import { Container } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import filterSilce from "../redux/filterSlice";
-import userSlice from "../redux/userSlice";
-import Slider from "../components/slider/Slider";
-import { getFoodsBySelect, getFoodsByCost, getCart } from "../redux/selector";
+import filterSilce from "../../redux/filterSlice";
+import Slider from "../../components/slider/Slider";
+import {
+  getFoodsBySelect,
+  getFoodsByCost,
+  getCart,
+} from "../../redux/selector";
 import {
   RightOutlined,
   CarOutlined,
   PropertySafetyOutlined,
   CheckCircleOutlined,
 } from "@ant-design/icons";
-import ProductComponent from "../components/productComponent/ProductComponent";
+import ProductComponent from "../../components/productComponent/ProductComponent";
 function Home() {
   const foods = useSelector(getFoodsBySelect);
   const hotPizza = useSelector(getFoodsByCost);
   const userCart = useSelector(getCart);
-  // console.log("userCart ", userCart);
-  // console.log("hot pizza : ", hotPizza);
   const navigate = useNavigate();
   const [filter, setFilter] = useState("All");
   const dispatch = useDispatch();
@@ -68,7 +69,7 @@ function Home() {
         <div className="right">
           <img
             className="image"
-            src={require("../asset/images/bg_section_1.png")}
+            src={require("../../asset/images/bg_section_1.png")}
             alt="#error"
           />
         </div>
@@ -78,8 +79,8 @@ function Home() {
         <div className="col">
           <img
             className="image"
-            src={require("../asset/images/category-01.png")}
-            // src={require("../asset/images/1.png")}
+            src={require("../../asset/images/category-01.png")}
+            // src={require("../../asset/images/1.png")}
             alt="#error"
           />
           <span className="name">Fastfood</span>
@@ -87,8 +88,8 @@ function Home() {
         <div className="col">
           <img
             className="image"
-            src={require("../asset/images/category-02.png")}
-            // src={require("../asset/images/2.png")}
+            src={require("../../asset/images/category-02.png")}
+            // src={require("../../asset/images/2.png")}
             alt="#error"
           />
           <span className="name">Pizza</span>
@@ -96,8 +97,8 @@ function Home() {
         <div className="col">
           <img
             className="image"
-            src={require("../asset/images/category-03.png")}
-            // src={require("../asset/images/3.png")}
+            src={require("../../asset/images/category-03.png")}
+            // src={require("../../asset/images/3.png")}
             alt="#error"
           />
           <span className="name">Asian Food</span>
@@ -105,8 +106,8 @@ function Home() {
         <div className="col">
           <img
             className="image"
-            src={require("../asset/images/category-04.png")}
-            // src={require("../asset/images/4.png")}
+            src={require("../../asset/images/category-04.png")}
+            // src={require("../../asset/images/4.png")}
             alt="#error"
           />
           <span className="name">Row Meat</span>
@@ -133,7 +134,7 @@ function Home() {
         <div className="detail">
           <div className="item">
             <img
-              src={require("../asset/images/service-01.png")}
+              src={require("../../asset/images/service-01.png")}
               alt="#error"
               className="image"
             />
@@ -146,7 +147,7 @@ function Home() {
 
           <div className="item">
             <img
-              src={require("../asset/images/service-02.png")}
+              src={require("../../asset/images/service-02.png")}
               alt="#error"
               className="image"
             />
@@ -159,7 +160,7 @@ function Home() {
 
           <div className="item">
             <img
-              src={require("../asset/images/service-03.png")}
+              src={require("../../asset/images/service-03.png")}
               alt="#error"
               className="image"
             />
@@ -187,7 +188,7 @@ function Home() {
           >
             <img
               className="image"
-              src={require("../asset/images/hamburger.png")}
+              src={require("../../asset/images/hamburger.png")}
               alt="#error"
             />
             Burger
@@ -198,7 +199,7 @@ function Home() {
           >
             <img
               className="image"
-              src={require("../asset/images/pizza.png")}
+              src={require("../../asset/images/pizza.png")}
               alt="#error"
             />
             Pizza
@@ -209,7 +210,7 @@ function Home() {
           >
             <img
               className="image"
-              src={require("../asset/images/bread.png")}
+              src={require("../../asset/images/bread.png")}
               alt="#error"
             />
             Bread
@@ -225,7 +226,7 @@ function Home() {
       <div className="Info">
         <img
           className="image"
-          src={require("../asset/images/bg_section_2.png")}
+          src={require("../../asset/images/bg_section_2.png")}
           alt="#error"
         />
         <div className="detail">
@@ -296,8 +297,8 @@ function Home() {
         </div>
 
         <img
-          // src={require("../asset/images/network.png")}
-          src={require("../asset/images/session-bg-3.png")}
+          // src={require("../../asset/images/network.png")}
+          src={require("../../asset/images/session-bg-3.png")}
           alt=""
           className="image"
         />

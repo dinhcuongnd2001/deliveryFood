@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
 import "./Header.scss";
 import { useSelector } from "react-redux";
-import { getQuantity } from "../redux/selector";
+import { getQuantity } from "../../redux/selector";
 import { useRef } from "react";
 const HeaderComponent = () => {
   const quantity = useSelector(getQuantity);
@@ -29,7 +29,7 @@ const HeaderComponent = () => {
               <Link to="/" className="link">
                 <img
                   className="image"
-                  src={require("../asset/images/logo_1.png")}
+                  src={require("../../asset/images/logo_1.png")}
                   alt="logo"
                 />
                 <h5 className="name">Tasty Treat</h5>

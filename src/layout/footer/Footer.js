@@ -68,22 +68,22 @@ function FooterComponent() {
           <div className="grid">
             <img
               className="image"
-              src={require("../asset/images/bread(1).png")}
+              src={require("../../asset/images/bread(1).png")}
               alt="#error"
             />
             <img
               className="image"
-              src={require("../asset/images/bread(2).png")}
+              src={require("../../asset/images/bread(2).png")}
               alt="#error"
             />
             <img
               className="image"
-              src={require("../asset/images/product_4.3.png")}
+              src={require("../../asset/images/product_4.3.png")}
               alt="#error"
             />
             <img
               className="image"
-              src={require("../asset/images/pizza.png")}
+              src={require("../../asset/images/pizza.png")}
               alt="#error"
             />
           </div>

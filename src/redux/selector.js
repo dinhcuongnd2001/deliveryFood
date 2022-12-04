@@ -46,13 +46,13 @@ export const getFoodsByMulSelection = createSelector(
           return foods.filter(
             (food) =>
               food.title.toLowerCase().includes(name.toLowerCase()) &&
-              food.price < 115
+              food.price < 50
           );
         } else
           return foods.filter(
             (food) =>
               food.title.toLowerCase().includes(name.toLowerCase()) &&
-              food.price >= 115
+              food.price >= 50
           );
       }
     } else {
@@ -68,7 +68,7 @@ export const getFoodsByMulSelection = createSelector(
             .filter(
               (food) =>
                 food.title.toLowerCase().includes(name.toLowerCase()) &&
-                food.price < 115
+                food.price < 50
             )
             .filter((each) => each.category == category);
         } else
@@ -76,7 +76,7 @@ export const getFoodsByMulSelection = createSelector(
             .filter(
               (food) =>
                 food.title.toLowerCase().includes(name.toLowerCase()) &&
-                food.price >= 115
+                food.price >= 50
             )
             .filter((each) => each.category == category);
       }

@@ -1,5 +1,5 @@
 import React from "react";
-import StreetRouter from "../router/streetRouter";
+import StreetRouter from "../../router/streetRouter";
 function ContentComponent() {
   return <StreetRouter></StreetRouter>;
 }

@@ -5,7 +5,7 @@ import "./Header.scss";
 import { useSelector } from "react-redux";
 import { getQuantity } from "../../redux/selector";
 import { useRef } from "react";
-const HeaderComponent = () => {
+const HeaderComponent = ({ invisibale, setInvisibale }) => {
   const quantity = useSelector(getQuantity);
   const navLinks = [
     { component: "Home", path: "/" },
@@ -55,7 +55,10 @@ const HeaderComponent = () => {
             <div className="nav_icon">
               {quantity ? <span className="counter">{quantity}</span> : null}
 
-              <ShoppingCartOutlined style={{ fontSize: "30px" }} />
+              <ShoppingCartOutlined
+                style={{ fontSize: "30px" }}
+                onClick={() => setInvisibale(!invisibale)}
+              />
               <UserOutlined style={{ fontSize: "30px" }} />
             </div>
           </div>

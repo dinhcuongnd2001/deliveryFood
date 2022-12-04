@@ -3,9 +3,9 @@
   .filter {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 100px);
+    // grid-template-rows: repeat(2, 100px);
     grid-gap: 10px;
-    height: 150px;
+    height: 75px;
 
     .search {
       input:focus {

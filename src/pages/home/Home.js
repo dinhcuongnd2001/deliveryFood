@@ -69,7 +69,8 @@ function Home() {
         <div className="right">
           <img
             className="image"
-            src={require("../../asset/images/bg_section_1.png")}
+            // src={require("../../asset/images/bg_section_1.png")}
+            src={require("../../asset/images/hero.png")}
             alt="#error"
           />
         </div>
@@ -226,7 +227,8 @@ function Home() {
       <div className="Info">
         <img
           className="image"
-          src={require("../../asset/images/bg_section_2.png")}
+          // src={require("../../asset/images/bg_section_2.png")}
+          src={require("../../asset/images/location.png")}
           alt="#error"
         />
         <div className="detail">
@@ -297,8 +299,8 @@ function Home() {
         </div>
 
         <img
-          // src={require("../../asset/images/network.png")}
-          src={require("../../asset/images/session-bg-3.png")}
+          src={require("../../asset/images/network.png")}
+          // src={require("../../asset/images/session-bg-3.png")}
           alt=""
           className="image"
         />

@@ -10,4 +10,6 @@ B1. Build hệ thống.
                                   }
         ảnh lưu trên db theo đường dẫn hiện tại trong máy       
 
--Header: xử lý khi croll
+-Header: xử lý khi croll (done)
+-checkout: khi khong co san phan thi hien thong bao <YOUR CART IS EMPTY >
+-tham them thong tin gio hangf

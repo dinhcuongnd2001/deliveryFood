@@ -17,7 +17,6 @@ import "./product.scss";
 
 function Products() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const allFoodsName = useSelector(getFoodsByMulSelection);
   const CurrCatrgory = useSelector(getCategory);
   const CurrtypeCost = useSelector(getTypeCostFood);
@@ -25,10 +24,6 @@ function Products() {
   const [category, setCategory] = useState(CurrCatrgory);
   const [typeCost, setTypeCost] = useState(CurrtypeCost);
   const [search, setSearch] = useState(currSearch);
-  useEffect(() => {
-    dispatch(filterSilce.actions.byCategory("All"));
-  }, []);
-
   const handleChange = (e) => {
     dispatch(filterSilce.actions.byName(e.target.value));
     setSearch(e.target.value);

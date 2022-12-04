@@ -12,7 +12,9 @@ function Main() {
       <HeaderComponent invisibale={invisibale} setInvisibale={setInvisibale} />
       <ContentComponent />
       <FooterComponent />
-      {invisibale ? <CartSidebar /> : null}
+      {invisibale ? (
+        <CartSidebar invisibale={invisibale} setInvisibale={setInvisibale} />
+      ) : null}
     </BrowserRouter>
   );
 }

@@ -8,7 +8,7 @@ import Slider from "../../components/slider/Slider";
 import {
   getFoodsBySelect,
   getFoodsByCost,
-  getCart,
+  getCategory,
 } from "../../redux/selector";
 import {
   RightOutlined,
@@ -20,9 +20,8 @@ import ProductComponent from "../../components/productComponent/ProductComponent
 function Home() {
   const foods = useSelector(getFoodsBySelect);
   const hotPizza = useSelector(getFoodsByCost);
-  const userCart = useSelector(getCart);
-  const navigate = useNavigate();
-  const [filter, setFilter] = useState("All");
+  const currCategory = useSelector(getCategory);
+  const [filter, setFilter] = useState(currCategory);
   const dispatch = useDispatch();
   const handleClick = (value) => {
     dispatch(filterSilce.actions.byCategory(value));

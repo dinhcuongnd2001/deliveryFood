@@ -1,5 +1,5 @@
 import Container from "react-bootstrap/Container";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
 import "./Header.scss";
 import { useSelector } from "react-redux";
@@ -7,6 +7,7 @@ import { getQuantity } from "../../redux/selector";
 import { useRef } from "react";
 const HeaderComponent = ({ invisibale, setInvisibale }) => {
   const quantity = useSelector(getQuantity);
+  const navigate = useNavigate();
   const navLinks = [
     { component: "Home", path: "/" },
     { component: "Foods", path: "/foods" },
@@ -59,7 +60,12 @@ const HeaderComponent = ({ invisibale, setInvisibale }) => {
                 style={{ fontSize: "30px" }}
                 onClick={() => setInvisibale(!invisibale)}
               />
-              <UserOutlined style={{ fontSize: "30px" }} />
+              <UserOutlined
+                onClick={() => {
+                  navigate("../login");
+                }}
+                style={{ fontSize: "30px" }}
+              />
             </div>
           </div>
         </Container>

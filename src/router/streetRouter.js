@@ -7,7 +7,9 @@ import Contact from "../pages/contract/Contact";
 import Products from "../components/product/Products";
 import Page404 from "../components/page404/Page404";
 import ProductDetail from "../components/productDetail/ProductDetail";
+import Login from "../components/login/Login";
 import Checkout from "../pages/checkout/Checkout";
+import Manager from "../pages/manager/Manager";
 function StreetRouter() {
   return (
     <>
@@ -20,6 +22,8 @@ function StreetRouter() {
         <Route path="/productDetail" element={<ProductDetail />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/checkout" element={<Checkout />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/manager" element={<Manager />}></Route>
         <Route path="*" element={<Page404 />}></Route>
       </Routes>
     </>

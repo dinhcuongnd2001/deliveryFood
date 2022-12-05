@@ -1,0 +1,35 @@
+.formLogin {
+  border: 1px solid #777;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  margin-bottom: 10px;
+  text-align: center;
+  position: relative;
+  .input {
+    margin-top: 10px;
+    border: 1px solid #777;
+    width: 90%;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .warning {
+    color: var(--active);
+    font-weight: 600;
+    margin: 5px 0;
+  }
+  .btn {
+    padding: 10px 20px;
+    background-color: var(--active);
+    width: 90%;
+    position: absolute;
+    bottom: 5px;
+    left: calc(10% / 2);
+    color: #fff;
+    &:hover {
+      opacity: 0.9;
+      color: #fff;
+      background-color: var(--active);
+    }
+  }
+}

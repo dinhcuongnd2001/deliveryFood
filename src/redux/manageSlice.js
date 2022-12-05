@@ -24,7 +24,6 @@ const manageSlice = createSlice({
 export default manageSlice;
 
 export const fetchFoods = createAsyncThunk("manage/fetchFoods", async () => {
-  // console.log("co vao day r");
   const res = await axios.get("http://localhost:8080/products");
   return res.data;
 });

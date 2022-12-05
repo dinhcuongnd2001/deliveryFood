@@ -7,6 +7,9 @@ const userSlice = createSlice({
   initialState: {
     quantity: 0,
     cart: [],
+    // listUser: [
+    //   { userName: "dinhcuong", password: "1234", quantity: 0, cart: [] },
+    // ],
   },
   reducers: {
     addQuantity: (state, action) => {

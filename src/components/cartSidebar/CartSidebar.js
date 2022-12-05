@@ -20,6 +20,9 @@ function CartSidebar({ invisibale, setInvisibale }) {
     setInvisibale(!invisibale);
   };
 
+  const handleSubProduct = (product) => {
+    dispatch(userSlice.actions.subQuantity(product));
+  };
   const handleAddProduct = (product) => {
     dispatch(userSlice.actions.addQuantity(product));
   };
@@ -35,7 +38,7 @@ function CartSidebar({ invisibale, setInvisibale }) {
         {currCart.length ? (
           <div className="listProduct">
             {currCart.map((item) => (
-              <div className="info_product">
+              <div key={item.id} className="info_product">
                 <img
                   src={require(`../../asset/images/${item.image01}`)}
                   alt="#error"
@@ -50,8 +53,15 @@ function CartSidebar({ invisibale, setInvisibale }) {
                     </span>
                   </p>
                   <div className="update">
-                    <GrAdd onClick={() => handleAddProduct(item)} />{" "}
-                    <span>{item.count}</span> <GrSubtract />
+                    <GrAdd
+                      className="icon"
+                      onClick={() => handleAddProduct(item)}
+                    />{" "}
+                    <span>{item.count}</span>{" "}
+                    <GrSubtract
+                      onClick={() => handleSubProduct(item)}
+                      className="icon"
+                    />
                   </div>
                 </div>
                 <AiOutlineClose

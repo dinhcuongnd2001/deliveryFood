@@ -65,6 +65,9 @@
           background-color: var(--bg);
           padding: 2px;
           border-radius: 5px;
+          .icon {
+            cursor: pointer;
+          }
         }
       }
       .icon {
@@ -83,6 +86,7 @@
   .empty_cart {
     text-align: center;
     margin-top: 50px;
+    height: calc(100vh - 200px);
     .icon {
       font-size: 30px;
     }

@@ -21,6 +21,16 @@ const userSlice = createSlice({
     },
     subQuantity: (state, action) => {
       state.quantity -= 1;
+      const newCart = state.cart
+        .map((item) => {
+          if (item.id === action.payload.id) {
+            item.count -= 1;
+            return item;
+          }
+          return item;
+        })
+        .filter((item) => item.count > 0);
+      state.cart = newCart;
     },
     removeProduct: (state, action) => {
       const newCart = state.cart.filter((item) => item.id != action.payload.id);

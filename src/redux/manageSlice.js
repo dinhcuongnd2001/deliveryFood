@@ -24,6 +24,10 @@ const manageSlice = createSlice({
 export default manageSlice;
 
 export const fetchFoods = createAsyncThunk("manage/fetchFoods", async () => {
-  const res = await axios.get("http://localhost:8080/products");
+  // const res = await axios.get("http://localhost:8080/products");
+  const res = await axios.get(
+    "https://6320b80e82f8687273a64e83.mockapi.io/api/products"
+  );
+
   return res.data;
 });
